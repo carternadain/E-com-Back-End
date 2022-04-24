@@ -1,13 +1,24 @@
 const router = require('express').Router();
 const res = require('express/lib/response');
-const { Category, Product } = require('../../models');
+const { Category, Product, ProductTag } = require('../../models');
 const { restore } = require('../../models/Product');
 
 // The `/api/categories` endpoint
 
 router.get('/', (req, res) => {
-  // find all categories
-  // be sure to include its associated Products
+ Category.findAll(
+{
+ include:{
+   module: Product,
+   attributes: ['product_name']
+  }
+ }
+)
+  .then(categoryData => res.json(categoryData))
+  .catch(err =>{
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 router.get('/:id', (req, res) => {
