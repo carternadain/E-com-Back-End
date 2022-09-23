@@ -4,7 +4,8 @@
 # Description 
 This repository encapsulates code created to connect mysql with "sequelize" to create get,post,put and delete "data" back from the live server.
 
-
+# Technology 
+`Javascript` ,`Html` ,`CSS` , `sql` , `Models` , `Node` , `Npm packages`, `express` , `sequelize` , `Routers`
 
 # Screenshot of application in use
 ![Screen Shot of the App in use](/assets/images/front.page.png)
